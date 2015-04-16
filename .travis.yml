@@ -2,4 +2,4 @@ install:
 - sh -xe install.sh
 
 script:
-- ./run "docker-compose up -d && docker ps"
+- ./run "docker-compose up -d && docker ps && curl http://127.0.0.1/hello"
