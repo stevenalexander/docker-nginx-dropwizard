@@ -19,7 +19,16 @@ gradle run
 To run containers:
 ```
 gradle buildJar
-docker-compose up
+docker-compose up -d
+
+# retrieve your docker host IP from boot2docker
+boot2docker ip
+
+# curl dropwizard/nginx containers using docker host IP
+curl http://192.168.59.103:8080/hello
+curl http://192.168.59.103:8090/hello
 ```
 
-# TODO need to setup link between nginx container and dropwizard, see [here](https://docs.docker.com/userguide/dockerlinks/).
+# Details
+
+The `docker-compose.yml` file configures the two images, creating a dropwizard container and linking it to an nginx container. With the link in place, docker creates a hosts entry for the dropwizard container which can be used in the nginx config `volumes-nginx-conf.d/default.conf` when setting up the reverse proxy.

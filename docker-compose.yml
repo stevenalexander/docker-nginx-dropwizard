@@ -5,7 +5,7 @@ web:
   ports:
    - "8080:80"
   volumes:
-   - volume-nginx-sites-enabled:/etc/nginx/sites-enabled
+   - volume-nginx-conf.d:/etc/nginx/conf.d
    - volume-nginx-log:/var/log/nginx
 
 dropwizard:
