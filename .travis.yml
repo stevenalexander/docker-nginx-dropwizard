@@ -2,4 +2,4 @@ install:
 - sh -xe install.sh
 
 script:
-- ./run "docker-compose up -d && docker run --rm --name client --link dockernginxdropwizard_web_1:web -i -t buildpack-deps:sid-curl sh -c 'curl http://web/hello'"
+- ./run "docker-compose up"
