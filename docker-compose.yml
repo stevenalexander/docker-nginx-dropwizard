@@ -1,3 +1,11 @@
+dropwizard:
+  image: java:8-jre
+  ports:
+   - "8090:8090"
+  volumes:
+   - volume-dropwizard:/dropwizard
+  command: ["java", "-jar", "-Done-jar.silent=true", "/dropwizard/dropwizard-application.jar", "server", "/dropwizard/config.yml"]
+
 web:
   image: nginx
   links:
@@ -7,11 +15,3 @@ web:
   volumes:
    - volume-nginx-conf.d:/etc/nginx/conf.d
    - volume-nginx-log:/var/log/nginx
-
-dropwizard:
-  image: java:8-jre
-  ports:
-   - "8090:8090"
-  volumes:
-   - volume-dropwizard:/dropwizard
-  command: ["java", "-jar", "-Done-jar.silent=true", "/dropwizard/dropwizard-application.jar", "server", "/dropwizard/config.yml"]
