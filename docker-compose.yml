@@ -20,4 +20,4 @@ client:
   image: buildpack-deps:sid-curl
   links:
    - web
-  command: 'curl -v http://web:80/hello1'
+  command: 'curl http://web:80/hello'

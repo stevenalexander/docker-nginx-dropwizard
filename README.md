@@ -2,6 +2,8 @@
 
 Example using Docker to create an nginx image and dropwizard image, then link them together so nginx acts as a reverse proxy for Dropwizard. Can be extended to link together multiple Dropwizard applications. Uses [Docker Compose](http://docs.docker.com/compose/) to create and configure the images.
 
+![terminal gif](https://raw.githubusercontent.com/stevenalexander/docker-nginx-dropwizard/master/terminal.gif "terminal gif")
+
 Requires:
 * [Docker](https://www.docker.com/)
 * [Boot2Docker](http://boot2docker.io/)
