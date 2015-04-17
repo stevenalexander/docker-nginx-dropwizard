@@ -15,9 +15,3 @@ web:
   volumes:
    - volume-nginx-conf.d:/etc/nginx/conf.d
    - volume-nginx-log:/var/log/nginx
-
-client:
-  image: buildpack-deps:sid-curl
-  links:
-   - web
-  command: 'curl http://web:80/hello'
